@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 9e1617c7b988e48ec93e58eb545e4eb2
+timeCreated: 1497417883
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Blessings through Raindrops
+  fontNames:
+  - Blessings through Raindrops
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
