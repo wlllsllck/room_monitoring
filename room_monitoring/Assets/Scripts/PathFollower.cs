@@ -11,10 +11,14 @@ public class PathFollower : MonoBehaviour {
 	float Timer;
 	public int CurrentNode;
 	int check = 0;	// default is 0, 1 is enter, -1 is exit
-	public Vector3 CurrentPositionHolder;
+	Vector3 CurrentPositionHolder;
+	public bool IsRight;
+	public bool IsLeft;
+	public bool IsUp;
+	public bool IsDown;
 	bool IsEnter = false;
 	public string identity = "target_15121_status";
-	string IsFound = "Found_8-303";
+	public string IsFound = "Found_8-303";
 	string IsLost = "Lost_8-320";
 	GameObject connection;
 
@@ -27,7 +31,7 @@ public class PathFollower : MonoBehaviour {
 //		foreach (Node n in PathNode) {
 //			Debug.Log (n.name);
 //		}
-		Debug.Log(identity);
+		//Debug.Log(identity);
 		CheckNode();
 	}
 
@@ -41,6 +45,7 @@ public class PathFollower : MonoBehaviour {
 		Timer += Time.deltaTime * MoveSpeed;
 
 		if (Test_Member.transform.position != CurrentPositionHolder) {
+			CheckDirection (Test_Member.transform.position, CurrentPositionHolder);
 			Test_Member.transform.position = Vector3.Lerp (Test_Member.transform.position, CurrentPositionHolder, Timer);
 		} 
 		else {
@@ -57,6 +62,7 @@ public class PathFollower : MonoBehaviour {
 	void Exit(){
 		Timer += Time.deltaTime * MoveSpeed;
 		if (Test_Member.transform.position != CurrentPositionHolder) {
+			CheckDirection (Test_Member.transform.position, CurrentPositionHolder);
 			Test_Member.transform.position = Vector3.Lerp (Test_Member.transform.position, CurrentPositionHolder, Timer);
 		} 
 		else {
@@ -70,35 +76,91 @@ public class PathFollower : MonoBehaviour {
 		}
 	} 		
 
+	void CheckDirection (Vector3 character, Vector3 holder){
+		if ((character.y < holder.y) && (character.x == holder.x)) {
+			IsUp = true;
+			IsDown = false;
+			IsLeft = false;
+			IsRight = false;
+		}
+		if ((character.y > holder.y) && (character.x == holder.x)) {
+			IsUp = false;
+			IsDown = true;
+			IsLeft = false;
+			IsRight = false;
+		}
+		if ((character.x < holder.x) && (character.y == holder.y)) {
+			IsUp = false;
+			IsDown = false;
+			IsLeft = false;
+			IsRight = true;
+		}
+		if ((character.x > holder.x) && (character.y == holder.y)) {
+			IsUp = false;
+			IsDown = false;
+			IsLeft = true;
+			IsRight = false;
+		}
+	}
+
 	void Update () {
 		Connection getdata = connection.GetComponent<Connection> ();
 //		Debug.Log (getdata.label_data);
 //		Debug.Log (getdata.note_data);
-		if (getdata.label_data == identity) {
-			if (IsEnter == false) {
-				if (getdata.note_data == IsFound) {
-					check = 1;
-				}
-				if (check == 1) {
-					Enter ();
+		if (getdata.label_data_first == identity || getdata.label_data_second == identity) {
+			if (getdata.label_data_first == identity) {
+				if (IsEnter == false) {
+					if (getdata.note_data_first == IsFound) {
+						check = 1;
+					}
+					if (check == 1) {
+						Enter ();
+					} 
+					else if (check == 0) {
+						IsEnter = true;
+						CheckNode ();
+					}
 				} 
-				else if (check == 0) {
-					IsEnter = true;
-					CheckNode ();
+				else if (IsEnter == true) {
+					if (getdata.note_data_first == IsLost) {
+						check = -1;
+					}
+					if (check == -1) {
+						Exit ();
+					}
+					else if (check == 0) {
+						IsEnter = false;
+						CheckNode();
+					}
 				}
 			} 
-			else if (IsEnter == true) {
-				if (getdata.note_data == IsLost) {
-					check = -1;
-				}
-				if (check == -1) {
-					Exit ();
-				}
-				else if (check == 0) {
-					IsEnter = false;
-					CheckNode();
+			if (getdata.label_data_second == identity) {
+				if (IsEnter == false) {
+					if (getdata.note_data_second == IsFound) {
+						check = 1;
+					}
+					if (check == 1) {
+						Enter ();
+					} 
+					else if (check == 0) {
+						IsEnter = true;
+						CheckNode ();
+					}
+				} 
+				else if (IsEnter == true) {
+					if (getdata.note_data_second == IsLost) {
+						check = -1;
+					}
+					if (check == -1) {
+						Exit ();
+					}
+					else if (check == 0) {
+						IsEnter = false;
+						CheckNode();
+					}
 				}
 			}
+
 		}
 
 	}

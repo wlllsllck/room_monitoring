@@ -200,7 +200,7 @@ public class BoardManager : MonoBehaviour {
 		Instantiate (PrinterTiles[3], new Vector3 ((float)19*0.64f, (float)1*0.64f, 0f), Quaternion.identity);
 
 		//refrigerator
-		Instantiate (Refrigerator, new Vector3 ((float)23*0.64f, (float)2.5*0.64f, 0f), Quaternion.identity);
+		Instantiate (Refrigerator, new Vector3 ((float)22.9*0.64f, (float)2.5*0.64f, 0f), Quaternion.identity);
 
 		//bin
 		Instantiate (Bin, new Vector3 ((float)5*0.64f, (float)6*0.64f, 0f), Quaternion.identity);

@@ -17,8 +17,13 @@ public class Connection : MonoBehaviour {
 
 	//WWW get;
 	bool continueRequest = false;
-	public string label_data;
-	public string note_data;
+	public string label_data_first;
+	public string label_data_second;
+	public string label_data_third;
+
+	public string note_data_first;
+	public string note_data_second;
+	public string note_data_third;
 
 	void Start()
 	{
@@ -80,9 +85,13 @@ public class Connection : MonoBehaviour {
 		}    
 		Debug.Log (parsejson.timestamp[0]);
 		Debug.Log (parsejson.label[0]);
-		label_data = (string)parsejson.label [0];
+		label_data_first = (string)parsejson.label [0];
+		label_data_second = (string)parsejson.label [1];
+		label_data_third = (string)parsejson.label [2];
 		Debug.Log (parsejson.note[0]);
-		note_data = (string)parsejson.note [0];
+		note_data_first = (string)parsejson.note [0];
+		note_data_second = (string)parsejson.note [1];
+		note_data_third = (string)parsejson.note [2];
 	}
 }
 
