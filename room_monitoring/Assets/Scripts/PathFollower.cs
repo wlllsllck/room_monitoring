@@ -134,7 +134,7 @@ public class PathFollower : MonoBehaviour {
 					}
 				}
 			} 
-			if (getdata.label_data_second == identity) {
+			if (getdata.label_data_second == identity)  {
 				if (IsEnter == false) {
 					if (getdata.note_data_second == IsFound) {
 						check = 1;

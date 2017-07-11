@@ -38,7 +38,7 @@ public class BoardManager : MonoBehaviour {
 			count++;
 			for (y = -2.0; y <=rows+2; y++ ) {
 				GameObject toInstantiate = floorTiles[5];
-				if (x > -2 && x < 22 && y <= 0) {
+				if (x > -2 && x < 19 && y <= 0) {
 						//toInstantiate = wallTiles [2];
 					//if (x == 1) {
 					//	toInstantiate = wallTiles [4];
@@ -79,11 +79,9 @@ public class BoardManager : MonoBehaviour {
 				}
 
 				if (y == -1.0) {
-					if ((count == 23) || (count == 24) || (count == 25))
-						toInstantiate = floorTiles [5];
-					else if ((count == 19) || (count == 21))
+					if ((count == 17) || (count == 19))
 						toInstantiate = numberTiles [3];
-					else if (count == 20)
+					else if (count == 18)
 						toInstantiate = numberTiles [0];
 				}
 
@@ -128,7 +126,7 @@ public class BoardManager : MonoBehaviour {
 		// boarder table
 
 		GameObject _toInstantiate;
-		int startx = 4;
+		int startx = 5;
 		int starty = 15;
 		for (int l = 0; l < 2; l++) {
 			for (int k = 0; k < 4; k++) {
@@ -194,36 +192,38 @@ public class BoardManager : MonoBehaviour {
 		//Instantiate (BookshTiles[2], new Vector3 ((float)1*0.64f, (float)11*0.64f, 0f), Quaternion.identity);
 
 		//printer
-		Instantiate (PrinterTiles[0], new Vector3 ((float)18*0.64f, (float)2*0.64f, 0f), Quaternion.identity);
-		Instantiate (PrinterTiles[1], new Vector3 ((float)19*0.64f, (float)2*0.64f, 0f), Quaternion.identity);
-		Instantiate (PrinterTiles[2], new Vector3 ((float)18*0.64f, (float)1*0.64f, 0f), Quaternion.identity);
-		Instantiate (PrinterTiles[3], new Vector3 ((float)19*0.64f, (float)1*0.64f, 0f), Quaternion.identity);
+		Instantiate (PrinterTiles[0], new Vector3 ((float)16*0.64f, (float)2*0.64f, 0f), Quaternion.identity);
+		Instantiate (PrinterTiles[1], new Vector3 ((float)17*0.64f, (float)2*0.64f, 0f), Quaternion.identity);
+		Instantiate (PrinterTiles[2], new Vector3 ((float)16*0.64f, (float)1*0.64f, 0f), Quaternion.identity);
+		Instantiate (PrinterTiles[3], new Vector3 ((float)17*0.64f, (float)1*0.64f, 0f), Quaternion.identity);
 
 		//refrigerator
 		Instantiate (Refrigerator, new Vector3 ((float)22.9*0.64f, (float)2.5*0.64f, 0f), Quaternion.identity);
 
 		//bin
-		Instantiate (Bin, new Vector3 ((float)5*0.64f, (float)6*0.64f, 0f), Quaternion.identity);
+		Instantiate (Bin, new Vector3 ((float)6*0.64f, (float)6*0.64f, 0f), Quaternion.identity);
 
 		//tea table
-		Instantiate (Teatable, new Vector3 ((float)13.5*0.64f, (float)5.5*0.64f, 0f), Quaternion.identity);
+		//Instantiate (Teatable, new Vector3 ((float)13.5*0.64f, (float)5.5*0.64f, 0f), Quaternion.identity);
 
 		//enter floor
+		Instantiate (floorTiles[3], new Vector3 ((float)20*0.64f, (float)-2.0*0.64f, 0f), Quaternion.identity);
+		Instantiate (floorTiles[3], new Vector3 ((float)19*0.64f, (float)-2.0*0.64f, 0f), Quaternion.identity);
 		Instantiate (floorTiles[3], new Vector3 ((float)22*0.64f, (float)-2.0*0.64f, 0f), Quaternion.identity);
 		Instantiate (floorTiles[3], new Vector3 ((float)21*0.64f, (float)-2.0*0.64f, 0f), Quaternion.identity);
 
 		// mac
-		Instantiate (Mac, new Vector3 ((float)5*0.64f, (float)14*0.64f, 0f), Quaternion.identity);
-		Instantiate (Mac, new Vector3 ((float)5*0.64f, (float)10*0.64f, 0f), Quaternion.identity);
+		Instantiate (Mac, new Vector3 ((float)6*0.64f, (float)14*0.64f, 0f), Quaternion.identity);
+		Instantiate (Mac, new Vector3 ((float)6*0.64f, (float)10*0.64f, 0f), Quaternion.identity);
 		Instantiate (Mac, new Vector3 ((float)12*0.64f, (float)12*0.64f, 0f), Quaternion.identity);
 		Instantiate (Mac, new Vector3 ((float)12*0.64f, (float)8*0.64f, 0f), Quaternion.identity);
 		Instantiate (Mac, new Vector3 ((float)15*0.64f, (float)10*0.64f, 0f), Quaternion.identity);
-		Instantiate (Mac, new Vector3 ((float)22*0.64f, (float)8*0.64f, 0f), Quaternion.identity);
-		Instantiate (Mac, new Vector3 ((float)22*0.64f, (float)12*0.64f, 0f), Quaternion.identity);
-		Instantiate (Mac, new Vector3 ((float)22*0.64f, (float)14*0.64f, 0f), Quaternion.identity);
+		Instantiate (Mac, new Vector3 ((float)23*0.64f, (float)8*0.64f, 0f), Quaternion.identity);
+		Instantiate (Mac, new Vector3 ((float)23*0.64f, (float)12*0.64f, 0f), Quaternion.identity);
+		Instantiate (Mac, new Vector3 ((float)23*0.64f, (float)14*0.64f, 0f), Quaternion.identity);
 
 		// addition tree
-		Instantiate (TreeTiles[0], new Vector3 ((float)2*0.64f, (float)1.8*0.64f, 0f), Quaternion.identity);
+		//Instantiate (TreeTiles[0], new Vector3 ((float)2*0.64f, (float)1.8*0.64f, 0f), Quaternion.identity);
 		Instantiate (TreeTiles[1], new Vector3 ((float)1*0.64f, (float)15*0.64f, 0f), Quaternion.identity);
 	}
 
