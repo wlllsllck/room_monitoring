@@ -142,7 +142,7 @@ public class BoardManager : MonoBehaviour {
 				starty -= 2;
 			}
 			starty = 15;
-			startx += 17;
+			startx += 16;
 		}
 
 		// center table
@@ -218,9 +218,9 @@ public class BoardManager : MonoBehaviour {
 		Instantiate (Mac, new Vector3 ((float)12*0.64f, (float)12*0.64f, 0f), Quaternion.identity);
 		Instantiate (Mac, new Vector3 ((float)12*0.64f, (float)8*0.64f, 0f), Quaternion.identity);
 		Instantiate (Mac, new Vector3 ((float)15*0.64f, (float)10*0.64f, 0f), Quaternion.identity);
-		Instantiate (Mac, new Vector3 ((float)23*0.64f, (float)8*0.64f, 0f), Quaternion.identity);
-		Instantiate (Mac, new Vector3 ((float)23*0.64f, (float)12*0.64f, 0f), Quaternion.identity);
-		Instantiate (Mac, new Vector3 ((float)23*0.64f, (float)14*0.64f, 0f), Quaternion.identity);
+		Instantiate (Mac, new Vector3 ((float)22*0.64f, (float)8*0.64f, 0f), Quaternion.identity);
+		Instantiate (Mac, new Vector3 ((float)22*0.64f, (float)12*0.64f, 0f), Quaternion.identity);
+		Instantiate (Mac, new Vector3 ((float)22*0.64f, (float)14*0.64f, 0f), Quaternion.identity);
 
 		// addition tree
 		//Instantiate (TreeTiles[0], new Vector3 ((float)2*0.64f, (float)1.8*0.64f, 0f), Quaternion.identity);

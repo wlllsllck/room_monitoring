@@ -7,13 +7,13 @@ public class Grid : MonoBehaviour {
 	//public Transform player;
 	public bool onlyDisplayPathGizmos;
 	public LayerMask unwalkableMask;
-	public Vector2 gridWorldSize;
+	public Vector2 gridWorldSize;		// adjust size of grid table
 	public float nodeRadius;
 	public List<_Node> path;
 
 	_Node[,] grid;
 	float nodeDiameter;
-	int gridSizeX, gridSizeY;
+	int gridSizeX, gridSizeY;		// amount of grid box in x axis and y axis
 
 	void Awake() {
 		nodeDiameter = nodeRadius * 2;
@@ -64,8 +64,8 @@ public class Grid : MonoBehaviour {
 	}
 
 	public _Node NodeFromWorldPoint(Vector2 worldPosition) {
-		float percentX = (worldPosition.x - 7.68f + gridWorldSize.x/2) / gridWorldSize.x;
-		float percentY = (worldPosition.y - 5.12f + gridWorldSize.y/2) / gridWorldSize.y;
+		float percentX = (worldPosition.x - 16f + gridWorldSize.x/2) / gridWorldSize.x;
+		float percentY = (worldPosition.y  + 0.64f + gridWorldSize.y/2) / gridWorldSize.y;
 		percentX = Mathf.Clamp01(percentX);
 		percentY = Mathf.Clamp01(percentY);
 

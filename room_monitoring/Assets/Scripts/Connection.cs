@@ -13,19 +13,25 @@ public class parseJSON
 }
 
 
+
 public class Connection : MonoBehaviour {
 
 	//WWW get;
 	bool continueRequest = false;
-	public string label_data_first;
-	public string label_data_second;
-	public string label_data_third;
+//	public string id_data_first;
+//	public string id_data_second;
+//	public string id_data_third;
+//
+//	public string label_data_first;
+//	public string label_data_second;
+//	public string label_data_third;
+//
+//	public string note_data_first;
+//	public string note_data_second;
+//	public string note_data_third;
+	public List<Data> current_data;
 
-	public string note_data_first;
-	public string note_data_second;
-	public string note_data_third;
-
-	void Start()
+	void Awake()
 	{
 		StartCoroutine (WaitForRequest ());
 	}
@@ -55,15 +61,15 @@ public class Connection : MonoBehaviour {
 			}    
 			yield return waitTime;
 		}
-//		yield return get;
-
 	} 
 
 	private void Processjson(string jsonString)
 	{
+		current_data = new List<Data>();
 		JsonData jsonvale = JsonMapper.ToObject(jsonString);
 		parseJSON parsejson;
 		parsejson = new parseJSON();
+//		current_data = new Data[5];
 //		parsejson.title = jsonvale["title"].ToString();
 //		parsejson.id = jsonvale["ID"].ToString();
 
@@ -77,21 +83,29 @@ public class Connection : MonoBehaviour {
 //		Debug.Log (jsonvale[0]["id"].ToString());
 		for(int i = 0; i<5; i++)
 		{
-			//parsejson.id.Add(jsonvale[i]["id"].ToString());
-			parsejson.timestamp.Add(jsonvale[i]["timestamp"].ToString());
+			parsejson.id.Add(jsonvale[i]["id"].ToString());
+//			parsejson.timestamp.Add(jsonvale[i]["timestamp"].ToString());
 			parsejson.label.Add(jsonvale[i]["label"].ToString());
 			//parsejson.value.Add(jsonvale[i]["value"].ToString());
 			parsejson.note.Add(jsonvale[i]["note"].ToString());
-		}    
-//		Debug.Log (parsejson.timestamp[0]);
-//		Debug.Log (parsejson.label[0]);
-		label_data_first = (string)parsejson.label [0];
-		label_data_second = (string)parsejson.label [1];
-		label_data_third = (string)parsejson.label [2];
-//		Debug.Log (parsejson.note[0]);
-		note_data_first = (string)parsejson.note [0];
-		note_data_second = (string)parsejson.note [1];
-		note_data_third = (string)parsejson.note [2];
+		}
+
+		for(int i = 0; i<5; i++)
+		{
+			current_data.Add(new Data ((string)parsejson.id [i], (string)parsejson.label [i], (string)parsejson.note [i]));
+		}
+//
+//		id_data_first = (string)parsejson.id [0];
+//		id_data_second = (string)parsejson.id [1];
+//		id_data_third = (string)parsejson.id [2];
+//
+//		label_data_first = (string)parsejson.label [0];
+//		label_data_second = (string)parsejson.label [1];
+//		label_data_third = (string)parsejson.label [2];
+//
+//		note_data_first = (string)parsejson.note [0];
+//		note_data_second = (string)parsejson.note [1];
+//		note_data_third = (string)parsejson.note [2];
 	}
 }
 

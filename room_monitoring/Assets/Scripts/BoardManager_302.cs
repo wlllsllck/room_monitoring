@@ -144,9 +144,9 @@ public class BoardManager_302 : MonoBehaviour {
 		Instantiate (CT_Maker, new Vector3 ((float)(startx + 3.8)*0.64f, (float)(starty + 8.7)*0.64f, 0f), Quaternion.identity);
 
 		//Chair
-		Instantiate (Chair, new Vector3 ((float)(startx + 2.4)*0.64f, (float)(starty + 7)*0.64f, 0f), Quaternion.identity);
-		Instantiate (Chair, new Vector3 ((float)(startx + 2.4)*0.64f, (float)(starty + 10)*0.64f, 0f), Quaternion.identity);
-		Instantiate (Chair, new Vector3 ((float)(startx + 7.3)*0.64f, (float)(starty + 8.5)*0.64f, 0f), Quaternion.identity);
+		Instantiate (Chair, new Vector3 ((float)(startx + 2.4)*0.64f, (float)(starty + 12)*0.64f, 0f), Quaternion.identity);
+		Instantiate (Chair, new Vector3 ((float)(startx + 7.3)*0.64f, (float)(starty + 10)*0.64f, 0f), Quaternion.identity);
+//		Instantiate (Chair, new Vector3 ((float)(startx + 7.3)*0.64f, (float)(starty + 12.5)*0.64f, 0f), Quaternion.identity);
 
 		//Wall in room
 		Instantiate (wallTiles[4], new Vector3 ((float)(startx + 11)*0.64f, (float)(starty + 6.5)*0.64f, 0f), Quaternion.identity);
@@ -196,8 +196,8 @@ public class BoardManager_302 : MonoBehaviour {
 
 		// tree
 		Instantiate (TreeTiles[1], new Vector3 ((float)(startx)*0.64f, (float)(starty + 16)*0.64f, 0f), Quaternion.identity);
-		Instantiate (TreeTiles[1], new Vector3 ((float)(startx + 16.8)*0.64f, (float)(starty + 2.8)*0.64f, 0f), Quaternion.identity);
-		Instantiate (TreeTiles[0], new Vector3 ((float)(startx + 15)*0.64f, (float)(starty + 2.75)*0.64f, 0f), Quaternion.identity);
+		Instantiate (TreeTiles[1], new Vector3 ((float)(startx + 20.8)*0.64f, (float)(starty + 2.8)*0.64f, 0f), Quaternion.identity);
+		Instantiate (TreeTiles[0], new Vector3 ((float)(startx + 19)*0.64f, (float)(starty + 2.75)*0.64f, 0f), Quaternion.identity);
 
 		//bin
 		Instantiate (Bin, new Vector3 ((float)(startx + 3.7)*0.64f, (float)(starty + 2.2)*0.64f, 0f), Quaternion.identity);

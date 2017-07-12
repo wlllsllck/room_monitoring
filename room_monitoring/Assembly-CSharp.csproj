@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\BoardManager_302.cs" />
      <Compile Include="Assets\Scripts\BoardManager_320.cs" />
      <Compile Include="Assets\Scripts\Connection.cs" />
+     <Compile Include="Assets\Scripts\Data.cs" />
      <Compile Include="Assets\Scripts\GUIComponent.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\GameManager_302.cs" />
@@ -58,12 +59,12 @@
      <Compile Include="Assets\Scripts\Member1.cs" />
      <Compile Include="Assets\Scripts\Member1Movement.cs" />
      <Compile Include="Assets\Scripts\Node.cs" />
-     <Compile Include="Assets\Scripts\PathFollower.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerAnimation.cs" />
      <Compile Include="Assets\Scripts\TestFinding\Grid.cs" />
      <Compile Include="Assets\Scripts\TestFinding\Heap.cs" />
      <Compile Include="Assets\Scripts\TestFinding\Pathfinding.cs" />
+     <Compile Include="Assets\Scripts\TestFinding\Unit.cs" />
      <Compile Include="Assets\Scripts\TestFinding\_Node.cs" />
      <Compile Include="Assets\Scripts\Test_Member_Animation.cs" />
      <None Include="Assets\Fronts\KGFonts-TOU.txt" />
