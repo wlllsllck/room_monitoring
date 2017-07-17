@@ -43,7 +43,7 @@ public class Pathfinding : MonoBehaviour {
 				pathSuccess = true;
 				break;
 			}
-	
+
 			foreach (_Node neighbour in grid.GetNeighbours(currentNode)) {
 				if (!neighbour.walkable || closeSet.Contains (neighbour)) {
 					continue;
