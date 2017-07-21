@@ -34,7 +34,7 @@ public class BoardManager_320 : MonoBehaviour {
 	void BoardSetup(){
 
 		// main room floor
-		for (int x = 0; x <= 20; x++) {
+		for (int x = 0; x <= 51; x++) {
 			for (int y = 0; y <= 10; y++) {
 				GameObject toInstantiate = floorTiles[0];
 				Instantiate (toInstantiate, new Vector3 ((float)(startx + x)*0.64f, (float)(starty - y)*0.64f, 0f), Quaternion.identity);
@@ -42,8 +42,8 @@ public class BoardManager_320 : MonoBehaviour {
 		}
 
 		//wall
-		for (int x = 1; x < 20; x++) {
-			if (x != 12 && x != 13 && x != 14 && x != 15) {
+		for (int x = 1; x <= 51; x++) {
+			if (x != 12 && x != 13 && x != 14 && x != 15 && x != 27 && x != 28 && x != 29 /*&& x != 38 && x != 39 && x != 40 */) {
 				for (int y = -1; y <=1; y++) {
 					if (y == -1) {
 						Instantiate (wallTiles[0], new Vector3 ((float)(startx + x)*0.64f, (float)(starty - y)*0.64f, 0f), Quaternion.identity);
@@ -77,15 +77,46 @@ public class BoardManager_320 : MonoBehaviour {
 		count = 3;
 		for (int y = -1; y <= 10; y++) {
 			if (count == 3) {
-				Instantiate (wallTiles[3], new Vector3 ((float)(startx + 20)*0.64f, (float)(starty - y)*0.64f, 0f), Quaternion.identity);
+				Instantiate (wallTiles [3], new Vector3 ((float)(startx + 20) * 0.64f, (float)(starty - y) * 0.64f, 0f), Quaternion.identity);
+				count--;
+			} else if (count == 2) {
+				Instantiate (wallTiles [4], new Vector3 ((float)(startx + 20) * 0.64f, (float)(starty - y) * 0.64f, 0f), Quaternion.identity);
+				count--;
+			} else if (count == 1) {
+				Instantiate (wallTiles [5], new Vector3 ((float)(startx + 20) * 0.64f, (float)(starty - y) * 0.64f, 0f), Quaternion.identity);
+				count = 3;
+			}
+
+		}
+
+		count = 3;
+		for (int y = -1; y <= 10; y++) {
+			if (count == 3) {
+				Instantiate (wallTiles[3], new Vector3 ((float)(startx + 34)*0.64f, (float)(starty - y)*0.64f, 0f), Quaternion.identity);
 				count--;
 			} 
 			else if (count == 2) {
-				Instantiate (wallTiles[4], new Vector3 ((float)(startx + 20)*0.64f, (float)(starty - y)*0.64f, 0f), Quaternion.identity);
+				Instantiate (wallTiles[4], new Vector3 ((float)(startx + 34)*0.64f, (float)(starty - y)*0.64f, 0f), Quaternion.identity);
 				count--;
 			} 
 			else if (count == 1) {
-				Instantiate (wallTiles[5], new Vector3 ((float)(startx + 20)*0.64f, (float)(starty - y)*0.64f, 0f), Quaternion.identity);
+				Instantiate (wallTiles[5], new Vector3 ((float)(startx + 34)*0.64f, (float)(starty - y)*0.64f, 0f), Quaternion.identity);
+				count = 3;
+			}
+		}
+
+		count = 3;
+		for (int y = -1; y <= 10; y++) {
+			if (count == 3) {
+				Instantiate (wallTiles[3], new Vector3 ((float)(startx + 51)*0.64f, (float)(starty - y)*0.64f, 0f), Quaternion.identity);
+				count--;
+			} 
+			else if (count == 2) {
+				Instantiate (wallTiles[4], new Vector3 ((float)(startx + 51)*0.64f, (float)(starty - y)*0.64f, 0f), Quaternion.identity);
+				count--;
+			} 
+			else if (count == 1) {
+				Instantiate (wallTiles[5], new Vector3 ((float)(startx + 51)*0.64f, (float)(starty - y)*0.64f, 0f), Quaternion.identity);
 				count = 3;
 			}
 		}
@@ -110,6 +141,9 @@ public class BoardManager_320 : MonoBehaviour {
 
 		//treasure
 		Instantiate (treasure, new Vector3 ((float)(startx + 18)*0.64f, (float)(starty - 9)*0.64f, 0f), Quaternion.identity);
+
+		//addition room in the future
+
 
 	}
 

@@ -1,15 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Diagnostics;
 
 public class Unit : MonoBehaviour {
 
 	public Vector2 target303, target302, target320;
 	public Vector2 Lost_pos;
 	public float speed = 0.02f;
+	public float TimeInRoom = 0;
 	int targetIndex;
 	Vector2[] path;
-	//bool IsEnter = false;
+	bool SwIsStart = false;
 	public bool IsRight, IsLeft, IsUp, IsDown;
 	GameObject connection;
 	public string label = "target_15121_status";
@@ -19,12 +21,16 @@ public class Unit : MonoBehaviour {
 	string IsLost = "Lost_8-320";
 	string unit_id = "0";
 	Unit_Animation unit_animation;
+//	PopUp_Message popupmessage;
+	Stopwatch sw = new Stopwatch ();
+//	public string name = "WILL";
 //	public Animator anim;
 
 	void Start() {
 //		anim = GetComponent<Animator>();
 		connection = GameObject.Find ("Connection");
 		unit_animation = GetComponent<Unit_Animation> ();
+//		popupmessage = GetComponent<PopUp_Message> ();
 		StartCoroutine ("Getdata");
 	}
 
@@ -43,25 +49,47 @@ public class Unit : MonoBehaviour {
 					}
 				}
 			}
-			yield return new WaitForSeconds (5);
+			yield return new WaitForSeconds (10);
 		}
 	}
 
 	void Action(Data n) {
 		if (n.note == IsFound302) {
 			path = Pathfinding.RequestPath (transform.position, target302);
+			if (!SwIsStart) {
+				SwIsStart = true;
+				sw.Start ();
+			}
+//			string message = name + " enter 302";
 			StartCoroutine ("FollowPath");
+//			StartCoroutine (ShowMessage (message, 4));
 		} 
 		else if (n.note == IsFound303) {
 			path = Pathfinding.RequestPath (transform.position, target303);
+			if (!SwIsStart) {
+				SwIsStart = true;
+				sw.Start ();
+			}
+//			string message = name + " enter 303";
 			StartCoroutine ("FollowPath");
+//			StartCoroutine (popupmessage.textPopUp(message, 2));
 		} 
 		else if (n.note == IsFound320) {
 			path = Pathfinding.RequestPath (transform.position, target320);
+			if (!SwIsStart) {
+				SwIsStart = true;
+				sw.Start ();
+			}
 			StartCoroutine ("FollowPath");
 		} 
 		else if (n.note == IsLost) {
 			path = Pathfinding.RequestPath (transform.position, Lost_pos);
+			if (SwIsStart == true) {
+				SwIsStart = false;
+				sw.Stop ();
+				TimeInRoom += (sw.ElapsedMilliseconds * Mathf.Pow (10, -3) / 60);
+				print ("time: " + TimeInRoom + " minutes");
+			}
 			StartCoroutine ("FollowPath");
 		}
 	}
@@ -130,6 +158,11 @@ public class Unit : MonoBehaviour {
 				yield return new WaitForSeconds(0.02f);
 			}
 		}
+
 	}
+
+//	IEnumerator ShowMessage (string message, float delay) {
+//		
+//	}
 	
 }

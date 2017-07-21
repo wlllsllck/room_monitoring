@@ -52,12 +52,14 @@
      <Compile Include="Assets\Scripts\BoardManager_320.cs" />
      <Compile Include="Assets\Scripts\Connection.cs" />
      <Compile Include="Assets\Scripts\Data.cs" />
+     <Compile Include="Assets\Scripts\Date_Time.cs" />
      <Compile Include="Assets\Scripts\GUIComponent.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\GameManager_302.cs" />
      <Compile Include="Assets\Scripts\GameManager_320.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerAnimation.cs" />
+     <Compile Include="Assets\Scripts\PopUp_Message.cs" />
      <Compile Include="Assets\Scripts\TestFinding\Grid.cs" />
      <Compile Include="Assets\Scripts\TestFinding\Heap.cs" />
      <Compile Include="Assets\Scripts\TestFinding\Pathfinding.cs" />
@@ -65,6 +67,9 @@
      <Compile Include="Assets\Scripts\TestFinding\Unit_Animation.cs" />
      <Compile Include="Assets\Scripts\TestFinding\_Node.cs" />
      <None Include="Assets\Fronts\KGFonts-TOU.txt" />
+     <None Include="Assets\Necromancer GUI\Kingthings.txt" />
+     <None Include="Assets\Necromancer GUI\Readme.txt" />
+     <None Include="Assets\GUI Stuff\readme.txt" />
  <Reference Include="UnityEngine.Analytics">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>

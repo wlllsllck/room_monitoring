@@ -44,7 +44,7 @@ public class GUIComponent : MonoBehaviour
 			guiSkin.box.fontSize = 10;
 
 			GUI.contentColor = color;
-
+		
 			Vector2 content = guiSkin.box.CalcSize(new GUIContent(text));
 
 //			GUI.Box(new Rect(boxPosition.x - 10, boxPosition.y + 10, content.x, content.y), text);

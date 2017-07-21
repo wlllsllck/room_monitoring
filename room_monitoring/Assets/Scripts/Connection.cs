@@ -18,17 +18,7 @@ public class Connection : MonoBehaviour {
 
 	//WWW get;
 	bool continueRequest = false;
-//	public string id_data_first;
-//	public string id_data_second;
-//	public string id_data_third;
-//
-//	public string label_data_first;
-//	public string label_data_second;
-//	public string label_data_third;
-//
-//	public string note_data_first;
-//	public string note_data_second;
-//	public string note_data_third;
+
 	public List<Data> current_data;
 
 	void Awake()
@@ -43,7 +33,7 @@ public class Connection : MonoBehaviour {
 //
 		continueRequest = true;
 
-		float requestFrequencyInSec = 5f;
+		float requestFrequencyInSec = 10f;
 		WaitForSeconds waitTime = new WaitForSeconds(requestFrequencyInSec);
 
 		while (continueRequest) {
@@ -94,18 +84,7 @@ public class Connection : MonoBehaviour {
 		{
 			current_data.Add(new Data ((string)parsejson.id [i], (string)parsejson.label [i], (string)parsejson.note [i]));
 		}
-//
-//		id_data_first = (string)parsejson.id [0];
-//		id_data_second = (string)parsejson.id [1];
-//		id_data_third = (string)parsejson.id [2];
-//
-//		label_data_first = (string)parsejson.label [0];
-//		label_data_second = (string)parsejson.label [1];
-//		label_data_third = (string)parsejson.label [2];
-//
-//		note_data_first = (string)parsejson.note [0];
-//		note_data_second = (string)parsejson.note [1];
-//		note_data_third = (string)parsejson.note [2];
+
 	}
 }
 

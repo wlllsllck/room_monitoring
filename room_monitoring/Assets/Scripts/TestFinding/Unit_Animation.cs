@@ -24,7 +24,7 @@ public class Unit_Animation : MonoBehaviour {
 			anim.SetBool ("Right", false);
 			anim.SetBool ("WalkUp", true);
 
-			print ("IsUp");
+//			print ("IsUp");
 			return true;
 		} 
 		else if (IsDown) {
@@ -37,7 +37,7 @@ public class Unit_Animation : MonoBehaviour {
 			anim.SetBool ("Right", false);
 			anim.SetBool ("WalkDown", true);
 
-			print ("IsDown");
+//			print ("IsDown");
 			return true;
 		} 
 		else if (IsLeft) {
@@ -50,7 +50,7 @@ public class Unit_Animation : MonoBehaviour {
 			anim.SetBool ("Right", false);
 			anim.SetBool ("WalkLeft", true);
 
-			print ("IsLeft");
+//			print ("IsLeft");
 			return true;
 		} 
 		else if (IsRight) {
@@ -63,11 +63,11 @@ public class Unit_Animation : MonoBehaviour {
 			anim.SetBool ("Up", false);
 			anim.SetBool ("WalkRight", true);
 
-			print ("IsRight");
+//			print ("IsRight");
 			return true;
 		} 
 		else {
-			print ("stay still");
+//			print ("stay still");
 			return false;
 		}
 	}
